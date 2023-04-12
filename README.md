@@ -6,21 +6,15 @@ const nodejs_tutorial_app = express()
 
 
 //3
+const keys = [
+    {
+        name: 'Ade',
+        age: 10,
+        sex: 'f'
+    }]
 
-nodejs_tutorial_app.get('/:key', function(req, res){
-    return response.send(`${req.params.key}`)
-});
-
-nodejs_tutorial_app.get('/:name', function(req, res){
-    return response.send(`${req.params.name}`)
-});
-
-nodejs_tutorial_app.get('/:age', function(req, res){
-    return response.send(`${req.params.age}`)
-});
-
-nodejs_tutorial_app.get('/:sex', function(req, res){
-    return response.send(`${req.params.sex}`)
+nodejs_tutorial_app.get('/:keys', function(req, res){
+    return res.send(`${req.params.keys}`)
 });
 
 //4 

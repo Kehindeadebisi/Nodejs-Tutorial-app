@@ -2,10 +2,15 @@ const express = require("express");
 
 const nodejs_tutorial_app = express()
 
-object = {key, names, age, sex}
+const keys = [
+    {
+        name: 'Ade',
+        age: 10,
+        sex: 'f'
+    }]
 
-nodejs_tutorial_app.get('/:object', function(req, res){
-    return response.send(`${req.params.object}`)
+nodejs_tutorial_app.get('/:keys', function(req, res){
+    return res.send(`${req.params.keys}`)
 });
 
 //4 
