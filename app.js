@@ -2,19 +2,35 @@ const express = require("express");
 
 const nodejs_tutorial_app = express()
 
-const keys = [
-    {
-        name: 'Ade',
+const users = {
+        names: 'Ade',
         age: 10,
         sex: 'f'
-    }]
+    }
 
-nodejs_tutorial_app.get('/:keys', function(req, res){
-    return res.send(`${req.params.keys}`)
+nodejs_tutorial_app.get('/:user', function(req, res){
+    req.params.user
+    if(!user) return res.send({
+        status: 'failed',
+        message: 'User not found',
+    })
+
+
+    const user = users.find(user => user.names == names)// using a name patam
+
+    if(!user) return res.send({
+        status: 'failed',
+        message: 'User not found'
+    })
+
+    return res.send({
+        status: 'Succes',
+        message: 'User found'
+    });
 });
 
 //4 
-nodejs_tutorial_app.get('/:object', function(req, res){
+nodejs_tutorial_app.get('/:user', function(req, res){
     res.json({ sex : "female" })
 });
 nodejs_tutorial_app.listen(5000, function(){
